@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body bgcolor="skyblue">
+<h1>User Registration Form</h1>
+<form action ="{% url 'gt' %}" method="post">
+    {% csrf_token %}
+    Enter Your Name :<input type="text" name="na"><br><br>
+    Enter Your Age :<input type="number" name="ag"><br><br>
+    Enter Your phoneno :<input type="number" name="ph"><br><br>
+    <input type ="submit" value="register">
+</form>
+<p><b>{{ out }}</b></p>
+</body>
+</html>
