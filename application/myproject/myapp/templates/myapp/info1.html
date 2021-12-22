@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="skyblue">
+<form action="{% url 'in' %}" method="POST">
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Empid</th>
+        <th>Mail</th>
+        <th>Mobile</th>
+        <th>Location</th>
+    </tr>
+    {% for i in r %}
+    <tr>
+        <td>{{i.ename}}</td>
+        <td>{{i.eid}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phno}}</td>
+        <td>{{i.Location}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>

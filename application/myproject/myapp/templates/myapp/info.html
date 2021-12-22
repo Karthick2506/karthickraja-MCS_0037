@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <style>
+        body
+        {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        a
+        {
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body bgcolor="skyblue">
+<h1>Information</h1>
+<form action="{% url 'in' %}" method="POST">
+    {% csrf_token %}
+    Enter Your Name:  <input type ="text" name="en"><br><br>
+    <input type="submit" value="search">
+</form>
+</body>
+</html>
