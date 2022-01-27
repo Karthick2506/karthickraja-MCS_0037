@@ -1,0 +1,28 @@
+What are lists and tuples? What is the key difference between the two?
+Lists and Tuples are both sequence data types that can store a collection of objects in Python. The objects stored in both sequences can have different data types. Lists are represented with square brackets ['sara', 6, 0.19], while tuples are represented with parantheses ('ansh', 5, 0.97).
+But what is the real difference between the two? The key difference between the two is that while lists are mutable, tuples on the other hand are immutable objects. This means that lists can be modified, appended or sliced on the go but tuples remain constant and cannot be modified in any manner. You can run the following example on Python IDLE to confirm the difference:
+
+my_tuple = ('sara', 6, 5, 0.97)
+my_list = ['sara', 6, 5, 0.97]
+print(my_tuple[0])     # output => 'sara'
+print(my_list[0])     # output => 'sara'
+my_tuple[0] = 'ansh'    # modifying tuple => throws an error
+my_list[0] = 'ansh'    # modifying list => list modified
+print(my_tuple[0])     # output => 'sara'
+print(my_list[0])     # output => 'ansh'
+
+
+SR.NO.	LIST	TUPLE
+1	Lists are mutable	                            Tuples are immutable
+2	Implication of iterations is Time-consuming	    The implication of iterations is comparatively Faster
+3	The list is better for performing operations,
+	such as insertion and deletion.	                    Tuple data type is appropriate for accessing the elements
+4	Lists consume more memory	                    Tuple consume less memory as compared to the list
+5	Lists have several built-in methods	            Tuple does not have many built-in methods.
+6	The unexpected changes and errors are 
+	more likely to occur				    In tuple, it is hard to take place.
+
+What are global, protected and private attributes in Python?
+Global variables are public variables that are defined in the global scope. To use the variable in the global scope inside a function, we use the global keyword.
+Protected attributes are attributes defined with an underscore prefixed to their identifier eg. _sara. They can still be accessed and modified from outside the class they are defined in but a responsible developer should refrain from doing so.
+Private attributes are attributes with double underscore prefixed to their identifier eg. __ansh. They cannot be accessed or modified from the outside directly and will result in an AttributeError if such an attempt is made.
