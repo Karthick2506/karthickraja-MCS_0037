@@ -1,0 +1,138 @@
+Creating restapi in Django:
+A REST API is a standardized way to provide data to other applications. Those applications can then use the data however they want. Sometimes, APIs also offer a way for other applications to make changes to the data.
+There are a few key options for a REST API request:
+GET — The most common option, returns some data from the API based on the endpoint you visit and any parameters you provide
+POST — Creates a new record that gets appended to the database
+PUT — Looks for a record at the given URI you provide. If it exists, update the existing record. If not, create a new record
+DELETE — Deletes the record at the given URI
+PATCH — Update individual fields of a record
+
+User authentication in Flask:
+User authentication is an essential part of the webpage since it protects user data such that only that
+particular user can access it.
+To achieve this authentication, typically one provides authentication data through Authorization header 
+or a custom header defined by server. 
+Replace “user” and “pass” with your username and password. 
+It will authenticate the request and return a response 200 or else it will return error 403.
+To achieve this authentication, typically one provides authentication data through Authorization header 
+or a custom header defined by server.
+import requests
+from requests.auth import HTTPBasicAuth
+  
+# Making a get request
+response = requests.get('https://api.github.com / user, ',
+            auth = HTTPBasicAuth('user', 'pass'))
+  
+# print request object
+print(response)
+Replace “user” and “pass” with your username and password. It will authenticate the request 
+and return a response 200 or else it will return error 403.
+
+Types of authentication:
+
+* Digest Authentication
+* OAuth 1 Authentication
+* OAuth 2 Authentication and Open ID Connect Authentication
+
+get() vs filter() in Django:
+
+The Difference between Django’s filter() and get() methods are: get throws an error if there’s no object matching the query. filter will return an empty queryset…
+
+Basically use get() when you want to get a single unique object, and filter() when you want to get all objects that match your lookup parameters.
+
+mymodel=model.objects.get(name='pol')
+
+mymodel=model.objects.filter(name='pol')
+
+Authentication and Authorization:
+
+Authentication:
+Authentication verifies who the user is.
+Authentication works through passwords, one-time pins, biometric information, and other information provided or entered by the user.
+Authentication is the first step of a good identity and access management process.
+Authentication is visible to and partially changeable by the user.
+Authorization isn’t visible to or changeable by the user.
+
+Authorization:
+
+Authorization determines what resources a user can access.
+
+Authorization works through settings that are implemented and maintained by the organization.
+
+Authorization always takes place after authentication.
+
+Authorization isn’t visible to or changeable by the user.
+Example: Once their level of access is authorized, employees and HR managers can access different levels of data based on the permissions set by the organization.
+
+Serializers in Django:
+Serializers in Django REST Framework are responsible for converting objects into data types understandable by javascript and front-end frameworks. Serializers also provide deserialization, allowing parsed data to be converted back into complex types, after first validating the incoming data.
+
+Acid in Django:
+ACID (Atomicity, Consistency, Isolation, Durability) is a set of properties of database transactions. The ACID compliance ensures that no data is lost or miscommunicated across the system in case of failure, even when there are multiple changes made during a single transaction. PostgreSQL.
+
+Indexing in SQL:
+Indexes are special lookup tables that the database search engine can use to speed up data retrieval.
+
+An index helps to speed up SELECT queries and WHERE clauses, but it slows down data input, with the UPDATE and the INSERT statements. Indexes can be created or dropped with no effect on the data.
+
+Creating an index involves the CREATE INDEX statement, which allows you to name the index, to specify the table and which column or columns to index, and to indicate whether the index is in an ascending or descending order.
+
+Indexes can also be unique, like the UNIQUE constraint, in that the index prevents duplicate entries in the column or combination of columns on which there is an index.
+
+Single-Column Indexes
+A single-column index is created based on only one table column. The basic syntax is as follows.
+
+CREATE INDEX index_name
+ON table_name (column_name);
+
+Unique Indexes
+Unique indexes are used not only for performance, but also for data integrity. A unique index does not allow any duplicate values to be inserted into the table. The basic syntax is as follows.
+
+CREATE UNIQUE INDEX index_name
+on table_name (column_name);
+
+Difference between urls.py in project folder and urls.py in app folder:
+
+The urls.py in your project folder are the "base" URLs for your site. You can then forward requests made on a certain route to your app's urls.py using include.
+
+So for instance, if I request "localhost:8000/myapp/contact", your project's urls.py will detect that it must forward the request to your app myapp, which will call its view views.contact.
+
+Difference between project and app in Django:
+A project refers to the entire application and all its parts. An app refers to a submodule of the project. It's self-sufficient and not intertwined with the other apps in the project such that, in theory, you could pick it up and plop it down into another project without any modification.
+
+Django URL Patterns:
+In Django, views are Python functions which take a URL request as parameter and return an HTTP response or throw an exception like 404. Each view needs to be mapped to a corresponding URL pattern. This is done via a Python module called URLConf(URL configuration)
+
+Let the project name be myProject. The Python module to be used as URLConf is the value of ROOT_URLCONF in myProject/settings.py. By default this is set to 'myProject.urls'. Every URLConf module must contain a variable urlpatterns which is a set of URL patterns to be matched against the requested URL. These patterns will be checked in sequence, until the first match is found. Then the view corresponding to the first match is invoked. If no URL pattern matches, Django invokes an appropriate error handling view.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
