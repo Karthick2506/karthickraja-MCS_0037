@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+</head>
+<body>
+{% autoescape off %}
+ Welcome to Django Login
+hello {{ name }}
+please confirm your mail
+Confirmation link: http://{{ domain }}{% url 'activate' uid64 = uid token=token %}
+{% endautoescape %}
+</body>
+</html>
